@@ -1,27 +1,30 @@
 <!doctype html>
 <html>
   <head>
-    <title>Yoga Swiper (klick to swipe v0.3)</title>
+    <title>Yoga Swiper (klick to swipe v0.4)</title>
     <style>
       #image {
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100%;
+        margin: auto;
       }
       
       @media only screen and (orientation: landscape) {
         #image {
           width: 80%;
         }
-      }
+     
+    }
     </style>
   </head>
   <body>
  
-    <img id="image" src="{{ images[0] }}" style="width: 100%;"/>
-    
-    
+      
+    <img id="image" src="{{ images[0] }}" />
+   
+ 
     <script>
       let currentIndex = 0;
       images = ["/static/images/image1.jpg", "/static/images/image2.jpg", "/static/images/image3.jpg",
