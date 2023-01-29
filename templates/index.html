@@ -1,16 +1,26 @@
 <!doctype html>
 <html>
   <head>
-    <title>Image Swiper</title>
+    <title>Yoga Swiper (klick to swipe v0.2)</title>
+    <style>
+      #image-container {
+        width: 100%;
+      }
+      
+      @media only screen and (orientation: landscape) {
+        #image-container {
+          width: 80%;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div id="image-container">
-    <img id="image" src="{{ images[0] }}" style="width: 100%;"/>
-
-    </div>
-    <br>
-   
-
+ 
+        <div id="image-container">
+          <img id="image" src="{{ images[0] }}" style="width: 100%;"/>
+        </div>
+    
+    
     <script>
       let currentIndex = 0;
       images = ["/static/images/image1.jpg", "/static/images/image2.jpg", "/static/images/image3.jpg",
@@ -24,7 +34,5 @@
         image.src = images[currentIndex];
       });
     </script>
-
-
   </body>
 </html>
