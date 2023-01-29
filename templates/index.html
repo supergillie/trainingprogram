@@ -2,28 +2,29 @@
 <html>
   <head>
     <title>Image Swiper</title>
+  </head>
+  <body>
+    <div id="image-container">
+    <img id="image" src="{{ images[0] }}" style="width: 100%;"/>
+
+    </div>
+    <br>
+   
+
     <script>
       let currentIndex = 0;
       images = ["/static/images/image1.jpg", "/static/images/image2.jpg", "/static/images/image3.jpg",
               "/static/images/image4.jpg", "/static/images/image5.jpg", "/static/images/image6.jpg",
-              "/static/images/image7.jpg", "/static/images/image8.jpg"]
-      
-      function showNextImage() {
-        currentIndex = (currentIndex + 1) % images.length;
-        document.getElementById("image").src = images[currentIndex];
-      }
-      
-      function showPreviousImage() {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        document.getElementById("image").src = images[currentIndex];
-      }
-    </script>
-  </head>
-  <body>
+              "/static/images/image7.jpg", "/static/images/image8.jpg"] 
 
-    <img id="image" src="{{ images[0] }}" style="width: 100%;"/>
-    <br>
-    <button onclick="showPreviousImage()">Previous</button>
-    <button onclick="showNextImage()">Next</button>
+     var image = document.querySelector('#image');
+
+    image.addEventListener('click', function() {
+        currentIndex = (currentIndex + 1) % images.length;
+        image.src = images[currentIndex];
+      });
+    </script>
+
+
   </body>
 </html>
