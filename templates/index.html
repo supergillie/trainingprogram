@@ -1,9 +1,9 @@
 <!doctype html>
 <html>
   <head>
-    <title>Yoga Swiper (klick to swipe v0.2)</title>
+    <title>Yoga Swiper (klick to swipe v0.3)</title>
     <style>
-      #image-container {
+      #image {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -11,7 +11,7 @@
       }
       
       @media only screen and (orientation: landscape) {
-        #image-container {
+        #image {
           width: 80%;
         }
       }
@@ -19,9 +19,7 @@
   </head>
   <body>
  
-        <div id="image-container">
-          <img id="image" src="{{ images[0] }}" style="width: 100%;"/>
-        </div>
+    <img id="image" src="{{ images[0] }}" style="width: 100%;"/>
     
     
     <script>
@@ -36,6 +34,73 @@
         currentIndex = (currentIndex + 1) % images.length;
         image.src = images[currentIndex];
       });
+
+
+      var image = document.querySelector('#image');
+let xDown = null;
+let yDown = null;
+
+image.addEventListener('touchstart', function(e) {
+  xDown = e.touches[0].clientX;
+  yDown = e.touches[0].clientY;
+});
+
+image.addEventListener('touchmove', function(e) {
+  if (!xDown || !yDown) {
+    return;
+  }
+
+  var xUp = e.touches[0].clientX;
+  var yUp = e.touches[0].clientY;
+  var xDiff = xDown - xUp;
+  var yDiff = yDown - yUp;
+
+  if (Math.abs(xDiff) > Math.abs(yDiff)) {
+    if (xDiff > 0) {
+      /* left swipe */
+      currentIndex = (currentIndex + 1) % images.length;
+      image.src = images[currentIndex];
+    } else {
+      /* right swipe */
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      image.src = images[currentIndex];
+    }
+  }
+  /* reset values */
+  xDown = null;
+  yDown = null;
+});
+
+image.addEventListener('mousedown', function(e) {
+  xDown = e.clientX;
+  yDown = e.clientY;
+});
+
+image.addEventListener('mouseup', function(e) {
+  if (!xDown || !yDown) {
+    return;
+  }
+
+  var xUp = e.clientX;
+  var yUp = e.clientY;
+  var xDiff = xDown - xUp;
+  var yDiff = yDown - yUp;
+
+  if (Math.abs(xDiff) > Math.abs(yDiff)) {
+    if (xDiff > 0) {
+      /* left swipe */
+      currentIndex = (currentIndex + 1) % images.length;
+      image.src = images[currentIndex];
+    } else {
+      /* right swipe */
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      image.src = images[currentIndex];
+    }
+  }
+  /* reset values */
+  xDown = null;
+  yDown = null;
+});
     </script>
   </body>
 </html>
