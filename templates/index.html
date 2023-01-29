@@ -1,12 +1,27 @@
-<!DOCTYPE html>
-<html style="height: 100%;">
-<head>
-    <meta name="viewport" content="width=device-width, minimum-scale=0.1">
-</head>
-<body style="margin: 0px; background: #0e0e0e; height: 100%">
-{% block content %}
-    <img src="{{ uri }}" style="background-color: hsl(0, 0%, 90%);transition: background-color 300ms" width="650"
-         height="650">
-{% endblock %}
-</body>
+<!doctype html>
+<html>
+  <head>
+    <title>Image Swiper</title>
+    <script>
+      let currentIndex = 0;
+      images = ["/static/images/image1.jpg", "/static/images/image2.jpg", "/static/images/image3.jpg"]
+      
+      function showNextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        document.getElementById("image").src = images[currentIndex];
+      }
+      
+      function showPreviousImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        document.getElementById("image").src = images[currentIndex];
+      }
+    </script>
+  </head>
+  <body>
+
+    <img id="image" src="{{ images[0] }}" style="width: 100%;"/>
+    <br>
+    <button onclick="showPreviousImage()">Previous</button>
+    <button onclick="showNextImage()">Next</button>
+  </body>
 </html>

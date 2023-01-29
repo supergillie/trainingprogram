@@ -1,1 +1,1 @@
-discogs-client
+Flask==2.2.2
