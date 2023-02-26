@@ -1,137 +1,92 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Workout Tracker</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-
-    .weekday-picker {
-      display: flex;
-      flex-wrap: wrap;
-      margin: 10px 0;
-      list-style-type: none;
-      padding: 0;
-    }
-
-    .weekday-picker li {
-      flex: 1;
-      margin: 5px;
-    }
-
-    .weekday-picker label {
-      display: block;
-      padding: 10px;
-      background-color: #f1f1f1;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      cursor: pointer;
-      text-align: center;
-    }
-
-    .weekday-picker input[type="checkbox"] {
-      display: none;
-    }
-
-    .weekday-picker input[type="checkbox"]:checked+label {
-      background-color: #ccc;
-    }
-
-    .checklist {
-      list-style-type: none;
-      padding-left: 20px;
-    }
-
-    .checklist li {
-      margin: 10px 0;
-    }
-
-    .checklist input[type="checkbox"] {
-      margin-right: 10px;
-    }
-  </style>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Workout Tracker</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			padding: 20px;
+			background: url('background-image.jpg') no-repeat center center fixed;
+			background-size: cover;
+		}
+		.checklist {
+			list-style-type: none;
+			padding-left: 20px;
+		}
+		.checklist li {
+			margin: 10px 0;
+		}
+		.checklist input[type="checkbox"] {
+			margin-right: 10px;
+		}
+	</style>
 </head>
-
 <body>
 
-  <h1>Workout Tracker</h1>
+	<h1>Workout Tracker</h1>
 
-  <ul class="weekday-picker">
-    <li><input type="checkbox" id="sunday" name="day" checked><label for="sunday">Sun</label></li>
-    <li><input type="checkbox" id="monday" name="day"><label for="monday">Mon</label></li>
-    <li><input type="checkbox" id="tuesday" name="day"><label for="tuesday">Tue</label></li>
-    <li><input type="checkbox" id="wednesday" name="day"><label for="wednesday">Wed</label></li>
-    <li><input type="checkbox" id="thursday" name="day"><label for="thursday">Thu</label></li>
-    <li><input type="checkbox" id="friday" name="day"><label for="friday">Fri</label></li>
-    <li><input type="checkbox" id="saturday" name="day"><label for="saturday">Sat</label></li>
-  </ul>
+	<div id="Sunday" class="tabcontent" style="display:block">
+		<h2>Sunday</h2>
+		<ul class="checklist">
+			<li><input type="checkbox"> Squats</li>
+			<li><input type="checkbox"> Lunges</li>
+			<li><input type="checkbox"> Leg press</li>
+			<li><input type="checkbox"> Bench press</li>
+			<li><input type="checkbox"> Shoulder press</li>
+			<li><input type="checkbox"> Lat pull-downs</li>
+			<li><input type="checkbox"> Planks</li>
+			<li><input type="checkbox"> Bicycle crunches</li>
+			<li><input type="checkbox"> Russian twists</li>
+		</ul>
+	</div>
 
-  <div id="Sunday" class="tabcontent" style="display:block">
-    <h2>Sunday</h2>
-    <ul class="checklist">
-      <li><input type="checkbox"> Squats</li>
-      <li><input type="checkbox"> Lunges</li>
-      <li><input type="checkbox"> Leg press</li>
-      <li><input type="checkbox"> Bench press</li>
-      <li><input type="checkbox"> Shoulder press</li>
-      <li><input type="checkbox"> Lat pull-downs</li>
-      <li><input type="checkbox"> Planks</li>
-      <li><input type="checkbox"> Bicycle crunches</li>
-      <li><input type="checkbox"> Russian twists</li>
-    </ul>
-  </div>
+	<div id="Monday" class="tabcontent">
+		<h2>Monday</h2>
+		<ul class="checklist">
+			<li><input type="checkbox"> High-Intensity Interval Training (HIIT)</li>
+			<li><input type="checkbox"> Sprinting (outside or on a treadmill)</li>
+			<li><input type="checkbox"> Jumping jacks</li>
+			<li><input type="checkbox"> Mountain climbers</li>
+			<li><input type="checkbox"> Sit-ups</li>
+			<li><input type="checkbox"> Reverse crunches</li>
+			<li><input type="checkbox"> Leg raises</li>
+			<li><input type="checkbox"> Plank twists</li>
+			<li><input type="checkbox"> Toe touches</li>
+		</ul>
+	</div>
 
-  <div id="Monday" class="tabcontent">
-    <h2>Monday</h2>
-    <ul class="checklist">
-      <li><input type="checkbox"> High-Intensity Interval Training (HIIT)</li>
-      <li><input type="checkbox"> Sprinting (outside or on a treadmill)</li>
-      <li><input type="checkbox"> Jumping jacks</li>
-      <li><input type="checkbox"> Mountain climbers</li>
-      <li><input type="checkbox"> Sit-ups</li>
-      <li><input type="checkbox"> Reverse crunches</li>
-      <li><input type="checkbox"> Leg raises</li>
-      <li><input type="checkbox"> Plank twists</li>
-      <li><input type="checkbox"> Toe touches</li>
-    </ul>
-  </div>
+	<div id="Tuesday" class="tabcontent">
+		<h2>Tuesday</h2>
+		<ul class="checklist">
+			<li><input type="checkbox"> Rest day or light activity</li>
+		</ul>
+	</div>
 
-  <div id="Tuesday" class="tabcontent">
-    <h2>Tuesday</h2>
-    <ul class="checklist">
-      <li><input type="checkbox"> Rest day or light activity</li>
-    </ul>
-  </div>
+	<div id="Wednesday" class="tabcontent">
+		<h2>Wednesday</h2>
+		<ul class="checklist">
+			<li><input type="checkbox"> Deadlifts</li>
+			<li><input type="checkbox"> Bent-over rows</li>
+			<li><input type="checkbox"> Chest flys</li>
+			<li><input type="checkbox"> Bicep curls</li>
+			<li><input type="checkbox"> Tricep extensions</li>
+			<li><input type="checkbox"> Calf raises</li>
+			<li><input type="checkbox"> V-ups</li>
+			<li><input type="checkbox"> Plank twists</li>
+			<li><input type="checkbox"> Toe touches</li>
+		</ul>
+	</div>
 
-  <div id="Wednesday" class="tabcontent">
-    <h2>Wednesday</h2>
-    <ul class="checklist">
-      <li><input type="checkbox"> Deadlifts</li>
-      <li><input type="checkbox"> Bent-over rows</li>
-      <li><input type="checkbox"> Chest flys</li>
-      <li><input type="checkbox"> Bicep curls</li>
-      <li><input type="checkbox"> Tricep extensions</li>
-      <li><input type="checkbox"> Calf raises</li>
-      <li><input type="checkbox"> V-ups</li>
-      <li><input type="checkbox"> Plank twists</li>
-      <li><input type="checkbox"> Toe touches</li>
-    </ul>
-  </div>
-
-  <div id="Thursday" class="tabcontent">
+	<div id="Thursday" class="tabcontent">
     <h2>Thursday</h2>
     <ul class="checklist">
-      <li><input type="checkbox"> Cardio</li>
-      <li><input type="checkbox"> Jackknife sit-ups</li>
-      <li><input type="checkbox"> Side plank dips</li>
-      <li><input type="checkbox"> Knee tucks</li>
+    <li><input type="checkbox"> Cardio</li>
+    <li><input type="checkbox"> Jackknife sit-ups</li>
+    <li><input type="checkbox"> Side plank dips</li>
+    <li><input type="checkbox"> Knee tucks</li>
     </ul>
   </div>
-
   <div id="Friday" class="tabcontent">
     <h2>Friday</h2>
     <ul class="checklist">
@@ -145,14 +100,14 @@
       <li><input type="checkbox"> Scissor kicks</li>
     </ul>
   </div>
-
+  
   <div id="Saturday" class="tabcontent">
     <h2>Saturday</h2>
     <ul class="checklist">
       <li><input type="checkbox"> Rest day or light activity</li>
     </ul>
   </div>
-
+  
   <script>
     function openTab(evt, tabName) {
       var i, tabcontent, tablinks;
@@ -168,7 +123,6 @@
       evt.currentTarget.className += " active";
     }
   </script>
-
-</body>
-
-</html>
+  </body>
+  </html>
+  
